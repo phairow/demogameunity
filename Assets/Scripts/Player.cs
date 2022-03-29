@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     private string WALK_ANIMATION = "Walk";
 
+    private bool IsGrounded;
+
     void Awake() {
         myBody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -38,12 +40,14 @@ public class Player : MonoBehaviour
     {
         PlayerMoveKeyboard();
         AnimatePlayer();
+        PlayerJump();
+    }
+
+    void FixedUpdate() {
     }
 
     void PlayerMoveKeyboard() {
         movementX = Input.GetAxis("Horizontal");
-
-        Debug.Log("x value is : " + movementX + " , delta time: " + Time.deltaTime);
 
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
     }
@@ -58,6 +62,19 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, true);
         } else {
             anim.SetBool(WALK_ANIMATION, false);
+        }
+    }
+
+    void PlayerJump() {
+        if (Input.GetButtonDown("Jump") && IsGrounded) {
+            IsGrounded = false;
+            myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            IsGrounded = true;
         }
     }
 }
