@@ -9,6 +9,12 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 tempPos;
 
+    [SerializeField]
+    private float minX = -600f;
+
+    [SerializeField]
+    private float maxX = 600f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +34,16 @@ public class CameraFollow : MonoBehaviour
     void UpdateCamera() {
         tempPos = transform.position;
         tempPos.x = player.position.x;
+
+        Debug.Log("x = " + tempPos.x);
+        if (tempPos.x < minX) {
+            tempPos.x = minX;
+        }
+
+        if (tempPos.x > maxX) {
+            tempPos.x = maxX;
+        }
+        Debug.Log("x = " + tempPos.x);
 
         transform.position = tempPos;
     }
