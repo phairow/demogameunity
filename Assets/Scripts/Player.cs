@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     }
 
     void AnimatePlayer() {
-
+        anim.speed = 0.3f;
         if (movementX > 0 ) {
             sr.flipX = false;
             anim.SetBool(WALK_ANIMATION, true);
