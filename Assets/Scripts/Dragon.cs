@@ -14,7 +14,7 @@ public class Dragon : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>();
 
-        speed = 2f;
+        speed = -2f;
     }
 
     // Update is called once per frame

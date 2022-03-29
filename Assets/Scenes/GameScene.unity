@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393b246f64ae34edabdafdfc79a87f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: 11
+  minX: -11
   maxX: 11
 --- !u!20 &519420031
 Camera:
