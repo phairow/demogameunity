@@ -73,8 +73,10 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("player collision");
         if (collision.gameObject.CompareTag("Ground")) {
             IsGrounded = true;
+            Debug.Log("player grounded: " + IsGrounded);
         }
     }
 }

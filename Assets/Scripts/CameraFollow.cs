@@ -35,7 +35,6 @@ public class CameraFollow : MonoBehaviour
         tempPos = transform.position;
         tempPos.x = player.position.x;
 
-        Debug.Log("x = " + tempPos.x);
         if (tempPos.x < minX) {
             tempPos.x = minX;
         }
@@ -43,7 +42,6 @@ public class CameraFollow : MonoBehaviour
         if (tempPos.x > maxX) {
             tempPos.x = maxX;
         }
-        Debug.Log("x = " + tempPos.x);
 
         transform.position = tempPos;
     }
