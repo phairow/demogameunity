@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7996376497253659059}
   - component: {fileID: 5387671421275307881}
   - component: {fileID: 2980670041564474724}
+  - component: {fileID: 1849873119021991337}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 477205199
-  m_SortingLayer: 0
+  m_SortingLayerID: -1302479047
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 6903203417000243483, guid: 3a97bb951004b48dca0a42d878e9b930, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,3 +152,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1849873119021991337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996376497253659056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c9ae29774d94e5a93917a8f09125d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForce: 10
+  jumpForce: 11
